@@ -1,4 +1,4 @@
-resource "azurerm_template_deployment" "module_az_arm_webapp_certificate_main" {
+resource "azurerm_template_deployment" "service_app_certificate_main" {
   name                = "${format("%s-arm-certificate", lower(replace(var.certificate_name,"[[:space:]]","-")))}"
   resource_group_name = "${var.resource_group_name}"
   deployment_mode     = "Incremental"
