@@ -22,7 +22,7 @@ data "azurerm_app_service_plan" "test" {
 module "eg_add_certificate" {
   source     = "git::https://github.com/transactiveltd/tf-module-azure-arm-certificate.git?ref=master"
   certificate_name     = "mysslcertificte"
-  service_plan_id      = "${data.azurermazurerm_app_service_plan_key_vault.test.id}"
+  service_plan_name    = "${data.azurermazurerm_app_service_plan_key_vault.test.name}"
   keyvault_id          = "${data.azurerm_key_vault.test.id}"
   resource_group_name  = "testing-service-rg"
 }

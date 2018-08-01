@@ -1,6 +1,15 @@
+data "azurerm_resource_group" "default" {
+  name = "${var.resource_group_name}"
+}
+
+data "azurerm_app_service_plan" "default" {
+  name                = "${var.service_plan_name}"
+  resource_group_name = "${data.azurerm_resource_group.default.name}"
+}
+
 resource "azurerm_template_deployment" "service_app_certificate_main" {
   name                = "${format("%s-arm-certificate", lower(replace(var.certificate_name,"[[:space:]]","-")))}"
-  resource_group_name = "${var.resource_group_name}"
+  resource_group_name = "${data.azurerm_resource_group.default.name}"
   deployment_mode     = "Incremental"
 
   template_body = <<DEPLOY
@@ -41,7 +50,7 @@ resource "azurerm_template_deployment" "service_app_certificate_main" {
 DEPLOY
 
   parameters {
-    "servicePlanId"   = "${var.service_plan_id}"
+    "servicePlanId"   = "${data.azurerm_app_service_plan.default.id}"
     "certificateName" = "${var.certificate_name}"
     "keyvaultId"      = "${var.keyvault_id}"
   }

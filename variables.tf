@@ -6,7 +6,7 @@ variable "keyvault_id" {
   type = "string"
 }
 
-variable "service_plan_id" {
+variable "service_plan_name" {
   type = "string"
 }
 
