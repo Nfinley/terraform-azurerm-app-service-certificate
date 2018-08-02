@@ -1,4 +1,4 @@
-# terrafrom-azurerm-app-service-certificate
+# terraform-azurerm-app-service-certificate
 
 Terraform module designed to add a certificate to an existing Azure PaaS Service Plan.
 
