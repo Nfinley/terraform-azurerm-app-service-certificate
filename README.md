@@ -1,4 +1,4 @@
-# tf-module-azure-arm-certificate
+# tf-module-azurerm-template-app-service-certificate
 
 Terraform module designed to add a certificate to an existing Azure PaaS Service Plan.
 
