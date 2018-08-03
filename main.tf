@@ -55,5 +55,5 @@ DEPLOY
     "keyvaultId"      = "${var.keyvault_id}"
   }
 
-  depends_on = "${var.depends_on}"
+  depends_on = []
 }

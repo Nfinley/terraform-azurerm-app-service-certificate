@@ -14,4 +14,3 @@ variable "resource_group_name" {
   description = "Azure Group Name"
   type        = "string"
 }
-variable depends_on { default = [], type = "list"}
