@@ -34,9 +34,9 @@ This will run an arm template deployment on the given resource group, get the ce
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | certificate_name | Certifcate Name, e.g. `myCertName` | string | - | yes |
-| service_plan_id | Azure Resouce Id path | string | - | yes |
-| keyvault_id | Azure Resouce Id path  | string | - | yes |
-| resource_group_name | Resource Group name, e.g. `testing-service-rg` | string | - | yes |
+| service_plan_id | Service Plan Id | string | - | yes |
+| keyvault_id | Key Vault Id  | string | - | yes |
+| resource_group_name | Resource Group of the service plan e.g. `testing-service-rg` | string | - | yes |
 
 
 ## Outputs
