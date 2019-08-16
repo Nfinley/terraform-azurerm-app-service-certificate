@@ -49,7 +49,7 @@ resource "azurerm_template_deployment" "service_app_certificate_main" {
 }
 DEPLOY
 
-  parameters {
+  parameters = {
     "servicePlanId"   = "${data.azurerm_app_service_plan.default.id}"
     "certificateName" = "${var.certificate_name}"
     "keyvaultId"      = "${var.keyvault_id}"
